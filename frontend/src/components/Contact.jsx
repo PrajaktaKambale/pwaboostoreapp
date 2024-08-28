@@ -63,15 +63,11 @@ const Contact = () => {
       //     },
       //   }
       // );
-      const response = await axios.post(
-        `${window.location.origin}/contact`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post(`${BASE_URL}/contact`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log("response", response);
       if (response.status !== 201)
         throw new Error("Network response was not ok");

@@ -16,9 +16,8 @@ function Login() {
       email: data.email,
       password: data.password,
     };
-    console.log("userInfo", userInfo, `${window.location.origin}/user/login`);
     await axios
-      .post(`${window.location.origin}/user/login`, userInfo)
+      .post(`${BASE_URL}/user/login`, userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
